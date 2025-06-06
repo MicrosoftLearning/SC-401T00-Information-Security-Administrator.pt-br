@@ -89,7 +89,7 @@ Nesta tarefa, você publicará o rótulo de retenção para que os usuários pos
 1. Na página **Nomear política**, insira:
 
     - **Nome**: `Sensitive Financial Data Retention`
-    - **Descrição**: `Makes the 'Sensitive Financial Records' label available to users in Exchange, SharePoint, OneDrive, and Teams.`
+    - **Descrição**: `Makes the 'Sensitive Financial Records' label available to users in Exchange, SharePoint, and OneDrive.`
 
 1. Selecione **Avançar**.
 
@@ -165,8 +165,8 @@ Nesta tarefa, você criará uma política de retenção estática para o conteú
 1. Na página **Escolher locais para aplicar a política**, habilite:
 
    - Mensagens do canal do Teams
-   - Chats do Teams e interações do Copilot
-   - Deixe todos os outros locais desabilitados.
+   - Chats do Teams
+   - Desabilitar todos os outros locais.
 
 1. Selecione **Avançar**.
 
@@ -184,92 +184,94 @@ Nesta tarefa, você criará uma política de retenção estática para o conteú
 
 Você configurou uma política de retenção estática que retém mensagens do Teams por três anos antes de excluí-las automaticamente.
 
-## Tarefa 5: criar um escopo adaptável
+<!------ Commenting out until tenant bug issues are resolved
+## Task 5 – Create an adaptive scope
 
-Nesta tarefa, você definirá um escopo adaptável direcionado a grupos do Microsoft 365 associados a funções de liderança e operações.
+In this task, you'll define an adaptive scope that targets Microsoft 365 groups associated with leadership and operations roles.
 
-1. No Microsoft Purview, **Configurações** > **Funções e escopos** > **Escopos adaptáveis.**
+1. In Microsoft Purview, **Settings** > **Roles and scopes** > **Adaptive scopes**.
 
-1. Na página **Escopos adaptáveis**, selecione **+ Criar escopo**.
+1. On the **Adaptive scopes** page select **+ Create scope**.
 
-1. Na página **Nomear o escopo da política adaptativa**, insira:
+1. On the **Name your adaptive policy scope** page enter:
 
-    - **Nome**: `Leadership and Ops Groups`
-    - **Descrição**: `Targets Leadership and Operations M365 groups with privileged access to sensitive data.`
+    - **Name**: `Leadership and Ops Groups`
+    - **Description**: `Targets Leadership and Operations M365 groups with privileged access to sensitive data.`
 
-1. Selecione **Avançar**.
+1. Select **Next**.
 
-1. Na página **Atribuir unidade administrativa**, clique em **Avançar**.
+1. On the **Assign admin unit** page select **Next**.
 
-1. Na página **Que tipo de escopo você deseja criar?**, selecione **Usuários** e, em seguida, **Avançar**.
+1. On the **What type of scope do you want to create?** page select **Users**, then select **Next**.
 
-1. Na página **Criar a consulta para definir usuários**, na seção **Atributos do usuário**, verifique se esses valores estão selecionados para a configuração do atributo do usuário:
+1. On the **Create the query to define users** page, in the **User attributes** section, ensure these values are selected for the user attribute configuration:
 
-   - Selecione o menu suspenso **Atributo** e **Departamento**
-   - Deixe o valor padrão **é igual a** no próximo campo
-   - Insira `Leadership` como o **Valor**.
+   - Select the **Attribute** dropdown then select **Department**
+   - Leave the default **is equal to** value in the next field
+   - Enter `Leadership` as the **Value**
 
-1. Adicione um segundo atributo selecionando **+ Adicionar atributo** na página **Criar a consulta para definir usuários**. No novo campo sob o que acabamos de configurar, configure estes valores:
+1. Add a second attribute by selecting **+ Add attribute** on the **Create the query to define users** page. In the new field under the one we just configured, configure these values:
 
-   - Selecione a lista suspensa do operador de consulta e atualize-a de E para **Ou**
-   - Selecione o menu suspenso **Atributo** e **Departamento**
-   - Deixe o valor padrão **é igual a** no próximo campo
-   - Insira `Operations` como o **Valor**
+   - Select the dropdown for the query operator and update it from And to **Or**
+   - Select the **Attribute** dropdown then select **Department**
+   - Leave the default **is equal to** value in the next field
+   - Enter `Operations` as the **Value**
 
-1. Selecione **Avançar**.
+1. Select **Next**.
 
-1. Na página **Examinar e concluir**, selecione **Enviar**.
+1. On the **Review and finish** page select **Submit**.
 
-1. Depois que o escopo adaptável for criado, selecione **Concluído** na página **Seu escopo foi criado**.
+1. Once your adaptive scope is created select **Done** on the **Your scope was created** page.
 
-Você criou um escopo adaptável a fim de dar suporte à retenção direcionada para grupos privilegiados na organização.
+You've created an adaptive scope to support targeted retention for privileged groups in the organization.
 
-## Tarefa 6: criar uma política de retenção com escopo adaptável
+## Task 6 – Create an adaptive retention policy
 
-Nesta tarefa, você usará o escopo adaptável criado a fim de configurar uma política de retenção para grupos do Microsoft 365 com responsabilidades confidenciais.
+In this task, you'll use the adaptive scope you created to configure a retention policy for Microsoft 365 groups with sensitive responsibilities.
 
-1. No Microsoft Purview, vá até **Soluções** > **Gerenciamento do Ciclo de Vida dos Dados** > **Políticas** >  **Políticas de retenção**.
+1. In Microsoft Purview, navigate to **Solutions** > **Data Lifecycle Management** > **Policies** >  **Retention policies**.
 
-1. Na página **Políticas de retenção**, selecione **+ Nova política de retenção**.
+1. On the **Retention policies** page, select **+ New retention policy**.
 
-1. Na página **Nomear política de retenção**, insira:
+1. On the **Name your retention policy** page enter:
 
-    - **Nome**: `Privileged Group Retention`
-    - **Descrição**: `Retains content from Leadership and Operations groups for 5 years to support audit and investigation.`
+    - **Name**: `Privileged Group Retention`
+    - **Description**: `Retains content from Leadership and Operations groups for 5 years to support audit and investigation.`
 
-1. Selecione **Avançar**.
+1. Select **Next**.
 
-1. Na página **Escopo da política**, clique em **Avançar**.
+1. On the **Policy Scope** page select **Next**.
 
-1. Na página **Escolher o tipo de política de retenção para criar**, selecione **Adaptável** e, em seguida, **Avançar**.
+1. On the **Choose the type of retention policy to create** page select **Adaptive** then select **Next**.
 
-1. Na página **Escolher escopos de política adaptáveis e locais**, selecione **+Adicionar escopos**.
+1. On the **Choose adaptive policy scopes and locations** page select **+ Add scopes**.
 
-1. No painel do submenu **Escolher escopos de política adaptáveis**, marque a caixa de seleção **Grupos de Liderança e Operações** e, em seguida, selecione **Adicionar** na parte inferior do painel.
+1. On the **Choose adaptive policy scopes** flyout panel select the checkbox for **Leadership and Ops Groups** then select **Add** at the bottom of the panel.
 
-1. Em **Escolher locais para aplicar a política**, habilite:
+1. Back on the **Choose locations to apply the policy** enable:
 
-    - Caixas de correio do Grupo do Microsoft 365 e sites
-    - Desabilitar todos os outros locais.
+    - Microsoft 365 Group mailboxes & sites
+    - Leave all other locations disabled.
 
-1. Selecione **Avançar**.
+1. Select **Next**.
 
-1. Na página **Decidir se deseja reter o conteúdo, excluí-lo ou ambos**, verifique se esses valores estão definidos para a configuração de retenção:
+1. On the **Decide if you want to retain content, delete it, or both** page, ensure these values are set for the retention configuration:
 
-   - Selecione **Reter itens por um período específico**.
-   - Em **Reter itens por um período específico**, selecione **5 anos** na lista suspensa
-   - **Iniciar o período de retenção com base em**: quando os itens foram alterados pela última vez
-   - **Ao final do período de retenção**: excluir itens automaticamente
+   - Select **Retain items for a specific period**.
+   - Under **Retain items for a specific period**, select **5 years** from the dropdown list
+   - **Start the retention period based on**: When items were last modified
+   - **At the end of the retention period**: Delete items automatically
 
-1. Selecione **Avançar**.
+1. Select **Next**.
 
-1. Na página **Examinar e concluir**, selecione **Enviar**.
+1. On the **Review and finish** page select **Submit**.
 
-1. Selecione **Concluído** assim que a política for criada.
+1. Select **Done** once the policy is created.
 
-Você criou uma política de retenção que se aplica ao conteúdo pertencente a grupos privilegiados, mantendo-o por cinco anos antes da exclusão.
+You've created a retention policy that applies to content owned by privileged groups, retaining it for five years before deletion.
+-->
 
-## Tarefa 7 - Recuperar conteúdo do SharePoint
+## Tarefa 5 — Recuperar conteúdo do SharePoint
 
 Nesta tarefa, você simulará a restauração de um documento excluído de um site do SharePoint para validar suas opções de recuperação.
 
@@ -296,5 +298,3 @@ Nesta tarefa, você simulará a restauração de um documento excluído de um si
 1. Na barra lateral esquerda, selecione **Documentos** e observe que o arquivo foi restaurado.
 
 Você recuperou com êxito um documento excluído de um site do SharePoint.
-
-Você restaurou o conteúdo excluído do SharePoint, validando a recuperação de documentos em caso de exclusão acidental ou não autorizada.
