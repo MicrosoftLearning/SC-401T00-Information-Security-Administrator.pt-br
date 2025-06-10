@@ -24,6 +24,14 @@ Nesta tarefa, você verificará a funcionalidade correta do Azure RMS do locatá
 
 1. Abra o PowerShell clicando com o botão direito do mouse no botão Iniciar na barra de tarefas e selecionando **Terminal**.
 
+1. Execute o cmdlet **Install Module** para instalar a versão mais recente do módulo do **PowerShell do Exchange Online**:
+
+    ```powershell
+    Install-Module ExchangeOnlineManagement
+    ```
+
+1. Confirme a caixa de diálogo Segurança do repositório não confiável com **S** para Sim e pressione **Enter**.  Esse processo pode levar algum tempo para ser concluído.
+
 1. Execute o cmdlet **Connect-ExchangeOnline** para usar o módulo PowerShell do Exchange Online e conectar-se ao seu locatário:
 
     ```powershell
@@ -93,6 +101,8 @@ Você desabilitou com êxito os provedores de identidade social, ajudando a gara
 ## Tarefa 3: validar o comportamento de marca padrão
 
 Você deve confirmar que nenhuma caixa de diálogo de IDs de redes sociais seja exibida para destinatários externos ao receber uma mensagem protegida com Criptografia de mensagem do Office 365 de usuários do seu locatário. Além disso, eles precisam usar a OTP a qualquer momento acessando o conteúdo criptografado.
+
+> [!alerta] A entrega de email externo pode estar bloqueada em alguns ambientes de laboratório. Essa tarefa pode não ser concluída conforme o esperado.
 
 1. Você ainda deve estar conectado à VM do Cliente 1 (SC-401-CL1) como **SC-401-CL1 \admin**.
 
@@ -187,6 +197,8 @@ Você configurou uma regra de transporte que garante que os emails do departamen
 ## Tarefa 5 - Validar o comportamento da identidade visual personalizada
 
 Para validar a nova configuração personalizada, você precisa usar a conta de Lynne Robbins novamente, que é membro da equipe financeira.
+
+> [!alerta] Restrições de email externo podem impedir que essa mensagem seja recebida. A identidade visual pode não aparecer conforme o esperado.
 
 1. Volte para **Microsoft Edge** com a janela Outlook InPrivate na web, onde você ainda deve estar conectado como **Lynne Robbins**.
 

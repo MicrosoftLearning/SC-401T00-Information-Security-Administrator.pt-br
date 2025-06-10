@@ -153,7 +153,7 @@ Nesta tarefa, você habilitará a integração entre o Microsoft Defender para P
 
 1. No painel de navegação esquerdo, selecione **Configurações** > **Pontos de extremidade** > **Recursos avançados**.
 
-1. Role para baixo e selecione a alternância para **Ativado** para **Compartilhar pontos de extremidade com o Centro de Conformidade da Microsoft**.
+1. Role para baixo e **Ative** o botão para **Compartilhar alertas do pontos de extremidade com o Centro de Conformidade da Microsoft**.
 
    ![Captura de tela mostrando a opção Compartilhar pontos de extremidade com o Centro de Conformidade da Microsoft.](../Media/enable-irm-in-mde.png)
 
@@ -164,6 +164,8 @@ Você habilitou o Defender para Ponto de Extremidade para compartilhar alertas c
 ## Tarefa 6 — Habilitar indicadores e configurar usuários prioritários
 
 Nesta tarefa, você configurará os indicadores de política e criará um grupo de usuários prioritários que pode ser usado em políticas de risco interno.
+
+> [!note] Os indicadores do Microsoft Defender para Ponto de Extremidade poderão aparecer esmaecidos e não selecionáveis se a integração da tarefa anterior não tiver concluído o processamento. Se isso acontecer, aguarde alguns minutos e atualize a página antes de continuar.
 
 1. No **Microsoft Edge**, navegue até `https://purview.microsoft.com`.
 

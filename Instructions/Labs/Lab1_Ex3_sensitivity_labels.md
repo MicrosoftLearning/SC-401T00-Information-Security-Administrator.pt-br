@@ -60,7 +60,7 @@ Nesta tarefa, você criará um rótulo de confidencialidade pai para conteúdo i
 
 1. Selecione **Avançar**.
 
-1. Na página **Definir o escopo deste rótulo**, selecione **Itens**, **Arquivos** e, em seguida, **Emails**. Se a caixa de seleção de **Reuniões** estiver marcada, desmarque-a.
+1. Na página **Definir o escopo para este rótulo**, selecione **Arquivos** e **E-mails**. Se a caixa de seleção de **Reuniões** estiver marcada, desmarque-a.
 
 1. Selecione **Avançar**.
 
@@ -93,7 +93,7 @@ Agora que você tem um rótulo base, criará um sub-rótulo para documentos rela
 
 1. Selecione **Avançar**.
 
-1. Na página **Definir o escopo deste rótulo**, selecione **Itens**, **Arquivos** e, em seguida, **Emails**. Se a caixa de seleção de **Reuniões** estiver marcada, desmarque-a.
+1. Na página **Definir o escopo para este rótulo**, selecione **Arquivos** e **E-mails**. Se a caixa de seleção de **Reuniões** estiver marcada, desmarque-a.
 
 1. Selecione **Avançar**.
 
@@ -163,7 +163,7 @@ Agora você publicará o rótulo de confidencialidade interno e de RH para que o
 
 1. Em **Configurações padrão para reuniões e eventos do calendário**, selecione **Avançar**.
 
-1. Em **Configurações padrão para conteúdo do Power BI**, selecione **Avançar**.
+1. Na página **Configurações padrão para conteúdo do Fabric e do Power BI**, clique em **Avançar**.
 
 1. Na página **Nomear política**, insira:
 
@@ -202,7 +202,7 @@ Nesta tarefa, você criará um rótulo de confidencialidade para dados financeir
 
 1. Selecione **Avançar**.
 
-1. Na página **Definir o escopo deste rótulo**, selecione **Itens**, **Arquivos** e, em seguida, **Emails**. Se a caixa de seleção de **Reuniões** estiver marcada, desmarque-a.
+1. Na página **Definir o escopo para este rótulo**, selecione **Arquivos** e **E-mails**. Se a caixa de seleção de **Reuniões** estiver marcada, desmarque-a.
 
 1. Selecione **Avançar**.
 
@@ -262,9 +262,9 @@ Nesta tarefa, você criará um rótulo de confidencialidade para dados financeir
 
 Você criou com êxito um rótulo de confidencialidade para dados financeiros e configurou uma política de rotulagem automática para detectar e rotular conteúdo que contém informações financeiras confidenciais.
 
-## Tarefa 6 - Criar e publicar um rótulo DKE para conteúdo altamente confidencial
+## Tarefa 6 – Criar e publicar um rótulo DKE para conteúdo confidencial
 
-Nesta tarefa, você criará um sub-rótulo sob o rótulo altamente confidencial integrado. Este sub-rótulo utilizará a Criptografia de Chave Dupla (DKE) e marca-d'água dinâmicas para proteger o conteúdo confidencial acessado apenas pelo departamento jurídico. Você também configurará uma política de rótulo que exija justificativa para fazer downgrade do rótulo.
+Nesta tarefa, você criará um sub-rótulo no rótulo Interno. Este sub-rótulo utilizará a Criptografia de Chave Dupla (DKE) e marca-d'água dinâmicas para proteger o conteúdo confidencial acessado apenas pelo departamento jurídico. Você também configurará uma política de rótulo que exija justificativa para fazer downgrade do rótulo.
 
 1. Ainda é necessário estar conectado à VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-cl1\admin**.
 
@@ -272,7 +272,7 @@ Nesta tarefa, você criará um sub-rótulo sob o rótulo altamente confidencial 
 
 1. No portal do Microsoft Purview, selecione **Soluções** > **Proteção de informações** > **Rótulos de confidencialidade**.
 
-1. Na página **Rótulos de confidencialidade**, localize o rótulo de confidencialidade **Altamente confidencial**. Selecione as reticências verticais (**...**) e, em seguida, selecione **+ Criar sub-rótulo** no menu suspenso.
+1. Na página **Rótulos de confidencialidade**, localize o rótulo de confidencialidade **Interno**. Selecione as reticências verticais (**...**) e, em seguida, selecione **+ Criar sub-rótulo** no menu suspenso.
 
 1. Na página **Fornecer detalhes básicos para este rótulo**, insira:
 
@@ -424,7 +424,7 @@ Agora que a verificação de rótulos está habilitada, você criará uma polít
 
       - Selecione a caixa de seleção para **Aplicar rótulo de confidencialidade**
 
-      - Selecione **Geral - Qualquer pessoa (sem restrições)** na lista suspensa.
+      - Selecione **Projeto Falcon – Altamente confidencial** no menu suspenso
 
 1. Selecione **Criar** para concluir a criação da política de arquivo.
 

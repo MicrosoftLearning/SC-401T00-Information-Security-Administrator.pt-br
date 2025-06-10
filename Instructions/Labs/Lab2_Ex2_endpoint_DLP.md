@@ -19,7 +19,7 @@ Joni Sherman, a recém-contratada Administradora de Segurança da Informação d
 
 Nesta tarefa, você integrará um dispositivo Windows 11 para que ele esteja pronto para ser protegido por políticas DLP de ponto de extremidade.
 
-1. Faça login em **VM do Cliente 2 (SC-401-CL2)** como a conta **SC-401-cl1\admin**.
+1. Faça login na **VM do Cliente 2 (SC-401-CL2)** como a conta **SC-401-cl2\admin**.
 
 1. Abra o Microsoft Edge, navegue até**`https://purview.microsoft.com`** e faça login no portal do Microsoft Purview como **Joni Sherman**. Entre como `JoniS@WWLxZZZZZZ.onmicrosoft.com`, (em que zzzzzz é a sua ID de locatário exclusiva fornecida pelo seu provedor de hospedagem de laboratório). A senha de Joni foi definida em um exercício anterior.
 
@@ -65,7 +65,7 @@ Você integrou o dispositivo com sucesso e o inscreveu no Microsoft Entra ID. Ag
 
 Nesta tarefa, você criará uma política DLP que bloqueia a transferência de informações confidenciais para unidades USB. Isso ajuda a reduzir o risco de os dados serem retirados do local sem autorização.
 
-1. Entre na VM do Cliente 1 (SC-401-CL1) como a conta SC-401-cl1\admin.
+1. Entre na VM do Cliente 1 (SC-401-CL1) como a conta de administrador SC-401-cl1.
 
 1. Você ainda deve estar na página **Dispositivos** no portal do Microsoft Purview, conectado como Joni Sherman.
 

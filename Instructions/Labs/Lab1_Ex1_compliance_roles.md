@@ -62,8 +62,6 @@ Nesta tarefa, você entrará como Joni Sherman para explorar o portal do Microso
 
 1. Uma mensagem sobre o novo portal do Microsoft Purview aparecerá na tela. Selecione **Introdução** para acessar o novo portal.
 
-    ![Captura de tela mostrando a tela de Boas-vindas ao novo porta do Microsoft Purview.](../Media/welcome-purview-portal.png)
-
 1. Familiarize-se com o novo portal do Microsoft Purview. Quando terminar, deixe a janela do navegador aberta.
 
 Você alternou para a conta de Joni Sherman e agora já pode iniciar o laboratório.

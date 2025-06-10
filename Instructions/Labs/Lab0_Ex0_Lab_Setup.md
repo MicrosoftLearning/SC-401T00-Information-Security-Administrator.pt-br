@@ -27,77 +27,79 @@ Neste laboratório, você configurará e preparará seu ambiente para tarefas de
 
 Nesta tarefa, você habilitará a Auditoria no portal do Microsoft Purview para monitorar as atividades do portal.
 
-1. Você ainda deve estar conectado à VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-CL1\admin** e conectado ao Microsoft 365 com a conta de Administrador do MOD.
+1. Entre na VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-CL1\admin** e entre no Microsoft 365 com a conta de Administrador do MOD.
 
-1. Abra uma janela elevada do Terminal clicando no botão Windows com o botão direito do mouse e selecione **Terminal (Admin)**.
+1. No Microsoft Edge, navegue até o portal do Microsoft Purview, `https://purview.microsoft.com`, e faça logon.
 
-1. Execute o cmdlet **Install Module** para instalar a versão mais recente do módulo do **PowerShell do Exchange Online**:
+1. Uma mensagem sobre o novo portal do Microsoft Purview aparecerá na tela. Selecione **Introdução** para acessar o novo portal.
+
+    ![Captura de tela mostrando a tela de Boas-vindas ao novo porta do Microsoft Purview.](../Media/welcome-purview-portal.png)
+
+1. Selecione **Soluções** na barra lateral esquerda e escolha **Auditoria**.
+
+1. Na página **Pesquisar**, selecione a barra **Iniciar gravação de atividades de usuário e administrador** para habilitar o registro em log de auditoria.
+
+    ![Captura de tela mostrando o botão Iniciar gravação de atividades do usuário e do administrador.](../Media/enable-audit-button.png)
+
+1. Depois de selecionar esta opção, a barra azul desaparecerá desta página.
+
+<!----- PowerShell instructions
+
+1. Open an elevated Terminal window by selecting the Windows button with the right mouse button and then select **Terminal (Admin)**.
+
+1. Run the **Install Module** cmdlet in the terminal window to install the latest **Exchange Online PowerShell** module version:
 
     ```powershell
     Install-Module ExchangeOnlineManagement
     ```
 
-1. Confirme o prompt do provedor NuGet digitando **Y** para Sim e pressione **Enter**.
+1. Confirm the NuGet provider prompt  by typing **Y** for Yes and press **Enter**.
 
-1. Confirme a caixa de diálogo Segurança do repositório não confiável com **S** para Sim e pressione **Enter**.  Esse processo pode levar algum tempo para ser concluído.
+1. Confirm the Untrusted repository security dialog with **Y** for Yes and press **Enter**.  This process may take some time to complete.
 
-1. Execute o cmdlet **Set-ExecutionPolicy** para alterar a política de execução e pressione **Enter**.
+1. Run the **Set-ExecutionPolicy** cmdlet to change your execution policy and press **Enter**
 
     ```powershell
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
     ```
 
-1. Feche a janela do PowerShell.
+1. Close the PowerShell window.
 
-1. Abra uma janela normal (não elevada) do PowerShell clicando com o botão direito do mouse no botão Windows e selecionando **Terminal**.
+1. Open a regular (non-elevated) PowerShell window by right-clicking the Windows button and selecting **Terminal**.
 
-1. Execute o cmdlet **Connect-ExchangeOnline** para usar o módulo PowerShell do Exchange Online e conectar-se ao seu locatário:
+1. Run the **Connect-ExchangeOnline** cmdlet to use the Exchange Online PowerShell module and connect to your tenant:
 
     ```powershell
     Connect-ExchangeOnline
     ```
 
-1. Quando a janela **Entrar** for exibida, entre como `admin@WWLxZZZZZZ.onmicrosoft.com` (em que ZZZZZZ é sua ID de locatário exclusiva fornecida pelo provedor de hospedagem de laboratório). A senha de administrador deve ser fornecida pelo seu provedor de hospedagem do laboratório.
+1. When the **Sign in** window is displayed, sign in as `admin@WWLxZZZZZZ.onmicrosoft.com` (where ZZZZZZ is your unique tenant ID provided by your lab hosting provider). Admin's password should be provided by your lab hosting provider.
 
-1. Para verificar se a Auditoria está habilitada, execute o cmdlet **Get-AdminAuditLogConfig**:
+1. To check if Audit is enabled, run the **Get-AdminAuditLogConfig** cmdlet:
 
     ```powershell
     Get-AdminAuditLogConfig | FL UnifiedAuditLogIngestionEnabled
     ```
 
-1. Se _UnifiedAuditLogIngestionEnabled_ retornar false, a auditoria estará habilitada.
+1. If _UnifiedAuditLogIngestionEnabled_ returns false, then Audit is disabled.
 
-1. Para habilitar o log de auditoria, execute o cmdlet **Set-AdminAuditLogConfig** e defina **UnifiedAuditLogIngestionEnabled** como _true_:
+1. To enable the Audit log, run the **Set-AdminAuditLogConfig** cmdlet and set the **UnifiedAuditLogIngestionEnabled** to _true_:
 
     ```powershell
     Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true
     ```
 
-1. Para verificar se a Auditoria está habilitada, execute o cmdlet **Get-AdminAuditLogConfig** novamente:
+1. To verify that Audit is enabled, run the **Get-AdminAuditLogConfig** cmdlet again:
 
     ```powershell
     Get-AdminAuditLogConfig | FL UnifiedAuditLogIngestionEnabled
     ```
 
-1. _UnifiedAuditLogIngestionEnabled_ retornará _true_ para informar que a auditoria está habilitada.
-
-<!---
-
-1. In Microsoft Edge, navigate to the Microsoft Purview portal, `https://purview.microsoft.com`, and log in.
-
-1. A message about the new Microsoft Purview portal will appear on the screen. Select the option to agree with the terms of data flow disclosure and the privacy statement, then select **Try now**.
-
-    ![Screenshot showing the Welcome to the new Microsoft Purview portal screen.](../Media/welcome-purview-portal.png)
-
-1. Select **Solutions** from the left sidebar, then select **Audit**.
-
-1. On the **Search** page, select the **Start recording user and admin activity** bar to enable audit logging.
-
-    ![Screenshot showing the Start recording user and admin activity button.](../Media/enable-audit-button.png)
-
-1. Once you select this option, the blue bar should disappear from this page.
+1. _UnifiedAuditLogIngestionEnabled_ should return _true_ to let you know Audit is enabled.
 
 -->
+
+Você habilitou a auditoria no Microsoft 365.
 
 ## Tarefa 2 — Definir senhas de usuário para exercícios de laboratório
 
@@ -147,17 +149,29 @@ Nesta tarefa, você habilitará a integração de dispositivos para sua organiza
 
 Agora você habilitou a integração de dispositivos e pode começar a integrar dispositivos a serem protegidos com políticas de DLP de ponto de extremidade. O processo de habilitação do recurso pode levar até 30 minutos.
 
-## Tarefa 4 - Habilitar a análise de riscos internos
+## Tarefa 4 – Habilitar a análise de riscos internos e o compartilhamento de dados
 
-Nesta tarefa, você habilitará a análise para o Gerenciamento de risco interno.
+Nesta tarefa, você habilitará a análise e o compartilhamento de dados para o Gerenciamento de risco interno.
 
 1. Ainda é necessário estar conectado à VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-CL1\admin** e conectado como Administrador MOD no Microsoft Purview.
 
 1. No Microsoft Purview, navegue até **Configurações** > **Gerenciamento de risco interno** > **Análise**.
 
-1. Alterne **Análise** para **Ativado** e selecione **Salvar**.
+1. Alterne essas configurações para **Ativado**:
 
-Você habilitou a análise para Gerenciamento de risco interno.
+   - **Mostrar insights no nível do locatário**
+
+   - **Mostrar insights no nível do usuário**
+
+1. Escolha **Salvar** na parte inferior da página.
+
+1. No painel de navegação à esquerda, clique em **Compartilhamento de dados**.
+
+1. Na seção Compartilhamento de dados, alterne **Compartilhar detalhes de risco do usuário com outras soluções de segurança** para **Ativado**.
+
+1. Escolha **Salvar** na parte inferior da página.
+
+Você habilitou a análise e o compartilhamento de dados para Gerenciamento de risco interno.
 
 ## Tarefa 5 - Inicializar o Microsoft Defender XDR
 
