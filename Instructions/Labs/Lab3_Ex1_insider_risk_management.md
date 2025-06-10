@@ -165,8 +165,6 @@ Você habilitou o Defender para Ponto de Extremidade para compartilhar alertas c
 
 Nesta tarefa, você configurará os indicadores de política e criará um grupo de usuários prioritários que pode ser usado em políticas de risco interno.
 
-> [!note] Os indicadores do Microsoft Defender para Ponto de Extremidade poderão aparecer esmaecidos e não selecionáveis se a integração da tarefa anterior não tiver concluído o processamento. Se isso acontecer, aguarde alguns minutos e atualize a página antes de continuar.
-
 1. No **Microsoft Edge**, navegue até `https://purview.microsoft.com`.
 
 1. Selecione **Configurações** > **Gerenciamento de Risco Interno**.

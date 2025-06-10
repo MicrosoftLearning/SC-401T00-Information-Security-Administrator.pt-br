@@ -89,7 +89,7 @@ Nesta tarefa, você publicará o rótulo de retenção para que os usuários pos
 1. Na página **Nomear política**, insira:
 
     - **Nome**: `Sensitive Financial Data Retention`
-    - **Descrição**: `Makes the 'Sensitive Financial Records' label available to users in Exchange, SharePoint, and OneDrive.`
+    - **Descrição**: `Makes the 'Sensitive Financial Records' label available to users in Exchange, SharePoint, OneDrive, and Teams.`
 
 1. Selecione **Avançar**.
 

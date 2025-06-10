@@ -108,7 +108,7 @@ Você pode reduzir ainda mais o risco impedindo que o Copilot processe ou respon
 
 1. No Microsoft Purview, navegue até **DSPM para IA** selecionando **Soluções** > **DSPM para IA** > **Recomendações**.
 
-1. Selecione a recomendação **Proteger dados confidenciais referenciados no Microsoft 365 Copilot (versão prévia)**.
+1. Selecione a recomendação **Proteger dados confidenciais referenciados nas respostas do Copilot e do agente**.
 
 1. Revise as diretrizes fornecidas nesta recomendação.
 
@@ -144,19 +144,19 @@ Você pode reduzir ainda mais o risco impedindo que o Copilot processe ou respon
 
 1. Volte para **DSPM para recomendações de IA** selecionando **Soluções** > **DSPM para IA** > **Recomendações**.
 
-1. Selecione a recomendação **Proteger dados confidenciais referenciados no Microsoft 365 Copilot (pré-visualização)** e selecione **Marcar como concluído**.
+1. Selecione a recomendação **Proteger dados confidenciais referenciados nas respostas do Copilot e do agente** e selecione **Marcar como concluído**.
 
 Você criou uma política de DLP que impede que o conteúdo rotulado seja usado nas solicitações e respostas do Copilot.
 
-## Tarefa 4 - Executar uma avaliação de dados para detectar conteúdo não rotulado
+## Tarefa 4 — Executar uma avaliação de dados para detectar conteúdo não rotulado
 
-Para entender possíveis lacunas na cobertura de rotulagem, você executará uma avaliação de dados para identificar arquivos sem rótulos de confidencialidade que podem ser acessados pelo Copilot.
+Para entender possíveis lacunas na cobertura de rotulagem, você executará uma avaliação de risco de dados para identificar arquivos sem rótulos de confidencialidade que podem ser acessados pelo Copilot.
 
-1. Em **DSPM para IA**, selecione a recomendação intitulada **Proteger dados confidenciais referenciados nas respostas do Copilot**.
+1. Em **DSPM para IA**, selecione a recomendação intitulada **Proteger dados confidenciais referenciados nas respostas do Copilot e do agente**.
 
-1. No painel **Proteger dados confidenciais referenciados nas respostas do Copilot**, revise o resumo e selecione **Ir para avaliações**.
+1. No painel **Proteger dados confidenciais referenciados nas respostas do Copilot e do agente**, revise o resumo e selecione **Ir para avaliações**.
 
-1. Na página **Avaliações de dados (visualização)**, selecione **Criar avaliação (visualização)**
+1. Na página **Avaliações de risco de dados**, selecione **Criar avaliação personalizada**
 
 1. Na página **Detalhes básicos**, insira:
 
@@ -173,4 +173,4 @@ Para entender possíveis lacunas na cobertura de rotulagem, você executará uma
 
 1. Na página **Avaliação de dados criada com sucesso**, selecione **Concluído**.
 
-Agora você usou o Microsoft Purview DSPM para IA para detectar riscos relacionados à IA, impor políticas e avaliar a exposição de dados confidenciais, ajudando sua organização a usar a IA com segurança.
+Agora você usou o DSPM do Microsoft Purview para IA para detectar riscos relacionados à IA, impor políticas e avaliar a exposição de dados confidenciais, ajudando a sua organização a usar a IA com segurança.
