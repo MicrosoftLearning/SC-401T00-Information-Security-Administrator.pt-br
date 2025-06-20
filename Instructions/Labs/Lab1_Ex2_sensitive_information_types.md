@@ -78,8 +78,6 @@ Nesta tarefa, você criará um novo tipo de informações confidenciais personal
 
 1. Na página **Revisar configurações e concluir**, revise as configurações e selecione **Criar**. Quando a criação tiver êxito, selecione **Concluído**.
 
-1. Saia da conta de Joni selecionando a foto do perfil de Joni Sherman no canto superior direito. Selecione **Sair** e feche a janela do navegador.
-
 Você criou um novo tipo de informação confidencial para identificar IDs de funcionários no padrão de três caracteres maiúsculos, seis números e as palavras-chave "Funcionário" ou "IDs" dentro de um intervalo de 100 caracteres.
 
 ## Tarefa 2 — Modificar o nível de confiança para reduzir falsos positivos
@@ -109,6 +107,8 @@ Você recebeu relatórios de que alguns documentos que contém IDs de funcionár
 1. Selecione **Próximo** até chegar à página **Revisar configurações e concluir**.
 
 1. Selecione **Salvar** e, em seguida, selecione **Concluído** para atualizar seu tipo de informações confidenciais.
+
+1. Saia da conta de Joni selecionando a foto do perfil de Joni Sherman no canto superior direito. Selecione **Sair** e feche a janela do navegador.
 
 Você reduziu com êxito o nível de confiança para aumentar a sensibilidade do SIT personalizado, ajudando a garantir que os documentos com conteúdo de correspondência parcial tenham maior probabilidade de serem sinalizados.
 

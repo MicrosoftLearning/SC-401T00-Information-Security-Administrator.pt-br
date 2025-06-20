@@ -86,7 +86,7 @@ Nesta tarefa, você configurará uma política de retenção de auditoria para p
 
 1. Selecione **Políticas** na barra lateral esquerda.
 
-1. Na página **Políticas**, selecione **Nova política de retenção de auditoria**.
+1. Na página **Políticas**, selecione **Criar política de retenção de auditoria**.
 
 1. No painel **Nova política de retenção de auditoria**, insira:
 

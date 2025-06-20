@@ -14,14 +14,15 @@ Os locatários não podem ser convertidos em uma assinatura paga. Os locatários
 
 # Configuração do laboratório — Preparar seu ambiente para administração
 
-Neste laboratório, você configurará e preparará seu ambiente para tarefas de administração. Você ativará os recursos necessários, configurará permissões administrativas e garantirá a configuração adequada dos principais elementos.
+Neste laboratório, você configurará e preparará seu ambiente para tarefas de administração. Você habilitará os recursos necessários, configurará permissões e preparará os principais serviços para administração.
 
 **Tarefas:**
 
-1. Habilitar a Auditoria no portal do Microsoft Purview
-1. Definir senhas de usuário para exercícios de laboratório
-1. Habilitar a integração de dispositivos
-1. Habilitar a análise de risco interno
+1. Habilitar a Auditoria no portal do Microsoft Purview  
+1. Habilitar a integração de dispositivos  
+1. Habilitar a análise de riscos internos e o compartilhamento de dados  
+1. Definir senhas de usuário para exercícios de laboratório  
+1. Inicializar o Microsoft Defender XDR
 
 ## Tarefa 1 – Habilitar a Auditoria no portal do Microsoft Purview
 
@@ -53,7 +54,7 @@ Nesta tarefa, você habilitará a Auditoria no portal do Microsoft Purview para 
     Install-Module ExchangeOnlineManagement
     ```
 
-1. Confirm the NuGet provider prompt  by typing **Y** for Yes and press **Enter**.
+1. Confirm the NuGet provider prompt by typing **Y** for Yes and press **Enter**.
 
 1. Confirm the Untrusted repository security dialog with **Y** for Yes and press **Enter**.  This process may take some time to complete.
 
@@ -101,13 +102,63 @@ Nesta tarefa, você habilitará a Auditoria no portal do Microsoft Purview para 
 
 Você habilitou a auditoria no Microsoft 365.
 
-## Tarefa 2 — Definir senhas de usuário para exercícios de laboratório
+## Tarefa 2 – Habilitar a integração do dispositivo
+
+Nesta tarefa, você habilitará a integração de dispositivos para sua organização.
+
+1. Ainda é necessário estar conectado à VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-CL1\admin** e conectado como Administrador MOD no Microsoft 365.
+
+1. No **Microsoft Edge**, navegue até**`https://purview.microsoft.com`** para fazer login no Microsoft Purview e selecione **Configurações** na barra lateral esquerda.
+
+1. Na barra lateral esquerda, expanda **Integração de dispositivos** e selecione **Dispositivos**.
+
+1. Na página **Dispositivos**, selecione **Ativar integração de dispositivos** e, em seguida, selecione **Ok** para habilitar a integração de dispositivos.
+
+1. Quando solicitado, selecione **OK** para confirmar se o monitoramento do dispositivo está sendo ativado.
+
+Agora você habilitou a integração de dispositivos e pode começar a integrar dispositivos a serem protegidos com políticas de DLP de ponto de extremidade. O processo de habilitação do recurso pode levar até 30 minutos.
+
+## Tarefa 3 – Habilitar a análise de riscos internos e o compartilhamento de dados
+
+Nesta tarefa, você habilitará a análise e o compartilhamento de dados para o Gerenciamento de risco interno.
+
+1. Ainda é necessário estar conectado à VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-CL1\admin** e conectado como Administrador MOD no Microsoft Purview.
+
+1. No Microsoft Purview, navegue até **Configurações** > **Gerenciamento de risco interno** > **Análise**.
+
+1. Alterne essas configurações para **Ativado**:
+
+   - **Mostrar insights no nível do locatário**
+
+   - **Mostrar insights no nível do usuário**
+
+1. Escolha **Salvar** na parte inferior da página.
+
+1. No painel de navegação à esquerda, clique em **Compartilhamento de dados**.
+
+1. Na seção Compartilhamento de dados, alterne **Compartilhar detalhes de risco do usuário com outras soluções de segurança** para **Ativado**.
+
+1. Escolha **Salvar** na parte inferior da página.
+
+Você habilitou a análise e o compartilhamento de dados para Gerenciamento de risco interno.
+
+## Tarefa 4 — Definir senhas de usuário para exercícios de laboratório
 
 Nesta tarefa, você definirá senhas para as contas de usuário necessárias para os laboratórios.
 
-1. Entra na VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-CL1\admin**. A senha deve ser fornecida pelo seu provedor de hospedagem de laboratório.
+1. Ainda é necessário estar conectado à VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-CL1\admin** e conectado como Administrador MOD no Microsoft 365.
 
 1. Abra o **Microsoft Edge** e navegue até **`https://admin.microsoft.com`** para entrar no centro de administração do Microsoft 365 como Administrador MOD, `admin@WWLxZZZZZZ.onmicrosoft.com` (em que ZZZZZZ é a sua ID de locatário exclusiva fornecida pelo seu provedor de hospedagem do laboratório).
+
+> [!note] **Observação**: em alguns locatários, talvez você veja um prompt de Imposição de MFA do Portal ao entrar. Se este prompt aparecer:
+> - Selecione **Adiar MFA** para atrasar temporariamente a configuração da MFA.
+>
+>   ![Captura de tela mostrando a opção de adiar a MFA.](../Media/postpone-mfa.png)
+> - Selecione **Confirmar adiamento**.
+>
+> - Selecione **Continuar logon sem a MFA** para acessar o centro de administração.
+>
+> Isso adiará a imposição da MFA para o locatário e permitirá que você prossiga com o laboratório.
 
 1. No painel de navegação à esquerda, expanda **Usuários** e selecione **Usuários ativos**.
 
@@ -133,46 +184,6 @@ Nesta tarefa, você definirá senhas para as contas de usuário necessárias par
 
 Você redefiniu com sucesso as senhas para exercícios de laboratório.
 
-## Tarefa 3 – Habilitar a integração do dispositivo
-
-Nesta tarefa, você habilitará a integração de dispositivos para sua organização.
-
-1. Ainda é necessário estar conectado à VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-CL1\admin** e conectado como Administrador MOD no Microsoft 365.
-
-1. No **Microsoft Edge**, navegue até**`https://purview.microsoft.com`** para fazer login no Microsoft Purview e selecione **Configurações** na barra lateral esquerda.
-
-1. Na barra lateral esquerda, expanda **Integração de dispositivos** e selecione **Dispositivos**.
-
-1. Na página **Dispositivos**, selecione **Ativar integração de dispositivos** e, em seguida, selecione **Ok** para habilitar a integração de dispositivos.
-
-1. Quando solicitado, selecione **OK** para confirmar se o monitoramento do dispositivo está sendo ativado.
-
-Agora você habilitou a integração de dispositivos e pode começar a integrar dispositivos a serem protegidos com políticas de DLP de ponto de extremidade. O processo de habilitação do recurso pode levar até 30 minutos.
-
-## Tarefa 4 – Habilitar a análise de riscos internos e o compartilhamento de dados
-
-Nesta tarefa, você habilitará a análise e o compartilhamento de dados para o Gerenciamento de risco interno.
-
-1. Ainda é necessário estar conectado à VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-CL1\admin** e conectado como Administrador MOD no Microsoft Purview.
-
-1. No Microsoft Purview, navegue até **Configurações** > **Gerenciamento de risco interno** > **Análise**.
-
-1. Alterne essas configurações para **Ativado**:
-
-   - **Mostrar insights no nível do locatário**
-
-   - **Mostrar insights no nível do usuário**
-
-1. Escolha **Salvar** na parte inferior da página.
-
-1. No painel de navegação à esquerda, clique em **Compartilhamento de dados**.
-
-1. Na seção Compartilhamento de dados, alterne **Compartilhar detalhes de risco do usuário com outras soluções de segurança** para **Ativado**.
-
-1. Escolha **Salvar** na parte inferior da página.
-
-Você habilitou a análise e o compartilhamento de dados para Gerenciamento de risco interno.
-
 ## Tarefa 5 - Inicializar o Microsoft Defender XDR
 
 Nesta tarefa, você abrirá o Microsoft Defender e aguardará a conclusão da inicialização do Microsoft Defender XDR.
@@ -182,6 +193,8 @@ Nesta tarefa, você abrirá o Microsoft Defender e aguardará a conclusão da in
 1. No **Microsoft Edge**, navegue até**`https://security.microsoft.com/`** para abrir o Microsoft Defender.
 
 1. No painel de navegação, selecione **Investigação e resposta** > **Incidentes e alertas** > **Incidentes**.
+
+> [!note] **Observação**: a tela de inicialização do Microsoft Defender XDR pode ou não aparecer, dependendo do locatário do laboratório. Se ela aparecer, você poderá continuar com outras tarefas enquanto ela é concluída em segundo plano.
 
 1. Você verá uma mensagem informando que o Microsoft Defender XDR está sendo preparado. Esse processo é executado automaticamente e pode levar alguns minutos.
 

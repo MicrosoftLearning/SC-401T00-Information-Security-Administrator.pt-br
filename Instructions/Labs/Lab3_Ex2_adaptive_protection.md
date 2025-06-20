@@ -12,7 +12,7 @@ Você é Joni Sherman, administradora de segurança da informação da Contoso L
 
 1. Atribuir uma política de risco interno à Proteção adaptável
 1. Definir configurações de proteção adaptável para sua política DLP
-1. (Opcional) Configurar o acesso condicional com proteção adaptável
+1. Configurar o Acesso condicional com a Proteção adaptável
 1. Ativar a proteção adaptável
 
 ## Tarefa 1: atribuir uma política de risco interno à Proteção adaptável
@@ -60,7 +60,7 @@ Agora que a Proteção adaptável está vinculada à sua política de risco inte
 
 Você atualizou sua política DLP para bloquear o compartilhamento quando o risco interno é elevado, fortalecendo a proteção de dados com base no comportamento do usuário.
 
-## Tarefa 3: (opcional) configurar o acesso condicional com proteção adaptável
+## Tarefa 3 – Configurar o Acesso condicional com a Proteção adaptável
 
 Para adicionar outra camada de imposição, você pode usar níveis de risco interno para restringir o acesso usando o Acesso condicional. Nesta tarefa, você criará uma política que bloqueia o acesso de usuários com um nível elevado de risco interno.
 
@@ -68,11 +68,15 @@ Para adicionar outra camada de imposição, você pode usar níveis de risco int
 
 1. Abra o Microsoft Edge e vá até o **centro de administração do Microsoft Entra** em `https://entra.microsoft.com`. Entre como **Administrador MOD**, `admin@WWLxZZZZZZ.onmicrosoft.com` (em que ZZZZZZ é a sua ID de locatário exclusiva fornecida pelo seu provedor de hospedagem de laboratório). A senha de Administrador deve ser fornecida pelo seu provedor de hospedagem do laboratório.
 
-1. Na página **Requer mais informações**, selecione **Avançar**.
-
-1. Na página **Manter sua conta segura**, siga as instruções para configurar a MFA (autenticação multifator) usando o Microsoft Authenticator ou outro app de autenticação.
-
-   Depois de concluir a configuração da MFA, você voltará para o **centro de administração do Microsoft Entra**.
+> [!note] **Observação**: em alguns locatários, talvez você veja um prompt de Imposição de MFA do Portal ao entrar. Se este prompt aparecer:
+> - Selecione **Adiar MFA** para atrasar temporariamente a configuração da MFA.
+>
+>   ![Captura de tela mostrando a opção de adiar a MFA.](../Media/postpone-mfa.png)
+> - Selecione **Confirmar adiamento**.
+>
+> - Selecione **Continuar logon sem a MFA** para acessar o Microsoft Entra.
+>
+> Isso adiará a imposição da MFA para o locatário e permitirá que você prossiga com o laboratório.
 
 1. No Centro de administração do Microsoft Entra, vá até **Proteção** > **Acesso condicional** > **Políticas**.
 
@@ -119,7 +123,7 @@ Nesta tarefa final, você ativará a Proteção adaptável para que o sistema po
 
    - Na guia **Níveis de risco interno**, a **Política rápida contra vazamento de dados** está selecionada.
 
-   - Na guia **Acesso condicional**, a política **Bloquear todo o acesso para risco elevado** fica visível (opcional).
+   - Na guia **Acesso condicional**, a política **Bloquear acesso para risco elevado** fica visível.
 
    - Na guia **Prevenção contra perda de dados**, a política **DLP - Proteção de cartão de crédito** é listada.
 

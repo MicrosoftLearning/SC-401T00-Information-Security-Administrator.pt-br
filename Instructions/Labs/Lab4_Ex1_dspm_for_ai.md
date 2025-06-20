@@ -20,7 +20,7 @@ Você é Joni Sherman, administrador de segurança da informação da Contoso Lt
 
 1. Usar o DSPM para IA para criar uma política DLP para sites de IA generativa
 1. Criar uma política de risco interno para detectar interações arriscadas de IA
-1. (Opcional) Impedir que o Copilot acesse o conteúdo rotulado
+1. Impedir que o Copilot acesse o conteúdo rotulado
 1. Executar uma avaliação de dados para detectar conteúdo não rotulado
 
 ## Tarefa 1 — Usar o DSPM para IA para criar uma política DLP para sites de IA generativa
@@ -55,7 +55,8 @@ Para reduzir o risco de perda de dados com assistentes de IA, você começará c
 
 1. Examine a configuração da regra criada pelo DSPM para IA:
    - Em **Condições**, observe os tipos de informações confidenciais incluídos e que a regra usa **Proteção adaptável** com base no risco elevado.
-   - Em **Ações**, confirme se **as atividades do domínio do serviço e do navegador** estão definidas como **Bloquear com substituição** para **Sites de IA generativa**.
+   - Em **Ações**, para as atividades Carregar e Colar, selecione **Editar** ao lado de **Restrições de grupo de domínio de serviço confidenciais.**
+   - Na configuração do grupo de domínios de serviço, confirme se os **Sites de IA generativa** estão definidos como **Bloquear com substituição**.
 
 1. Selecione **Cancelar** para sair do editor de regras sem alterações.
 
@@ -102,13 +103,13 @@ Confirme se o evento de ativação é **Conta de usuário excluída do Microsoft
 
 Você criou uma política que detecta interações de IA arriscadas, incluindo solicitações e respostas, para ajudar a identificar sinais precoces de comportamento arriscado do usuário.
 
-## Tarefa 3 - (Opcional) Impedir que o Copilot acesse o conteúdo rotulado
+## Tarefa 3 - Impedir que o Copilot acesse o conteúdo rotulado
 
 Você pode reduzir ainda mais o risco impedindo que o Copilot processe ou responda com conteúdo protegido por rótulos de confidencialidade.
 
 1. No Microsoft Purview, navegue até **DSPM para IA** selecionando **Soluções** > **DSPM para IA** > **Recomendações**.
 
-1. Selecione a recomendação **Proteger dados confidenciais referenciados nas respostas do Copilot e do agente**.
+1. Selecione a recomendação **Proteger dados confidenciais referenciados no Microsoft 365 Copilot e agentes (versão prévia)**.
 
 1. Revise as diretrizes fornecidas nesta recomendação.
 
@@ -129,9 +130,9 @@ Você pode reduzir ainda mais o risco impedindo que o Copilot processe ou respon
 
    - **Nome**: `Prevent Copilot from accessing labeled data`
    - Em **Condições**, selecione **Adicionar condição** > **Conteúdo contém** > **Rótulos de confidencialidade**. Adicione estes rótulos de confidencialidade:
-     - `Internal`
-     - `Confidential`
-     - `Highly Confidential`
+     - `Trusted People`
+     - `Project - Falcon`
+     - `Financial Data`
    - Selecione **Adicionar**
    - Em **Ações**, selecione **Adicionar uma ação** > **Impedir que o Copilot processe conteúdo (visualização)**
    - Selecione **Salvar** na parte inferior do submenu **Criar regra**.
@@ -144,7 +145,7 @@ Você pode reduzir ainda mais o risco impedindo que o Copilot processe ou respon
 
 1. Volte para **DSPM para recomendações de IA** selecionando **Soluções** > **DSPM para IA** > **Recomendações**.
 
-1. Selecione a recomendação **Proteger dados confidenciais referenciados nas respostas do Copilot e do agente** e selecione **Marcar como concluído**.
+1. Selecione a recomendação **Proteger dados confidenciais referenciados no Microsoft 365 Copilot e agentes (versão prévia)** e selecione **Marcar como concluído**.
 
 Você criou uma política de DLP que impede que o conteúdo rotulado seja usado nas solicitações e respostas do Copilot.
 
@@ -154,7 +155,7 @@ Para entender possíveis lacunas na cobertura de rotulagem, você executará uma
 
 1. Em **DSPM para IA**, selecione a recomendação intitulada **Proteger dados confidenciais referenciados nas respostas do Copilot e do agente**.
 
-1. No painel **Proteger dados confidenciais referenciados nas respostas do Copilot e do agente**, revise o resumo e selecione **Ir para avaliações**.
+1. No painel **Proteger dados confidenciais referenciados no Copilot e nas respostas do agente** e selecione **Ir para avaliações**.
 
 1. Na página **Avaliações de risco de dados**, selecione **Criar avaliação personalizada**
 

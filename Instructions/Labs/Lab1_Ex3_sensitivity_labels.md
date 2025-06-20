@@ -361,7 +361,7 @@ Você criou e publicou com êxito um sub-rótulo usando criptografia de chave du
 
 ## Tarefa 7 - Habilitar a integração do Microsoft Purview no Defender para Aplicativos de Nuvem
 
-Nesta tarefa, você habilitará a integração do Microsoft Purview no Microsoft Defender para Aplicativos de Nuvem. Isso permite que o Defender examine novos arquivos em busca de rótulos de confidencialidade do Microsoft Purview e inspecione o conteúdo com base nesses rótulos.
+Nesta tarefa, você habilitará a integração do Microsoft Purview no Microsoft Defender para Aplicativos de Nuvem e ativará o monitoramento de arquivos. Isso permite que o Defender verifique se há rótulos de confidencialidade no Microsoft Purview em arquivos novos e modificados, inspecione o conteúdo com base nesses rótulos e monitore arquivos para que as políticas de arquivo possam ser aplicadas.
 
 1. Ainda é necessário estar conectado à VM do Cliente 1 (SC-401-CL1) como **SC-401-CL1\admin** e ainda estar conectado como Joni Sherman.
 
@@ -385,11 +385,17 @@ Nesta tarefa, você habilitará a integração do Microsoft Purview no Microsoft
 
 1. Selecione **Salvar** para aplicar a configuração.
 
-Você habilitou o Defender para Aplicativos em Nuvem para reconhecer e examinar arquivos em busca de rótulos de confidencialidade do Microsoft Purview.
+1. Na seção **Proteção de informações** no painel esquerdo, selecione **Arquivos**.
+
+1. Na página **Arquivos**, clique em **Habilitar monitoramento de arquivos**.
+
+1. Selecione **Salvar** para aplicar a configuração.
+
+Você habilitou o Defender para Aplicativos de Nuvem para verificar arquivos em busca de rótulos de confidencialidade e monitorar arquivos para que as políticas de arquivo possam avaliar e aplicar ações de governança.
 
 ## Tarefa 8 - Criar uma política de arquivos para rotular automaticamente arquivos compartilhados externamente
 
-Agora que a verificação de rótulos está habilitada, você criará uma política de arquivo que aplica um rótulo de confidencialidade geral a todos os novos arquivos compartilhados fora da sua organização.
+Agora que a verificação de rótulos está habilitada, você criará uma política de arquivo que aplica o rótulo de confidencialidade **Altamente confidencial - Projeto - Falcon** aos arquivos nas pastas do Projeto Mark 8 que são compartilhados fora da sua organização. Essa política é categorizada como DLP porque protege dados confidenciais contra exposição não intencional.
 
 1. No **Microsoft Defender**, navegue até **Aplicativos na nuvem** > **Políticas** > **Gerenciamento de políticas**.
 
@@ -400,11 +406,19 @@ Agora que a verificação de rótulos está habilitada, você criará uma polít
 1. Na página **Criar política de arquivo
 **, configure:
 
-   - **Nome da política**: `Auto-label externally shared files`
+   - **Nome da política**: `Auto-label external sharing for Project Falcon files`
 
-   - **Gravidade da política**: **Baixa**
+   - **Gravidade da política**: **alta**
 
    - **Categoria**: **DLP**
+
+   - **Aplicar a**: **pastas selecionadas**
+
+      - Selecione **Adicionar pasta(s)** e pesquise `Project` no campo Nome do **arquivo**.
+
+      - Marque a caixa de seleção das pastas **Mark 8 Project Team Notebook** e **Mark 8 Project team** do SharePoint.
+
+      - Selecione **Concluído** para fechar a janela **Selecionar uma pasta**.
 
    - Na seção **Arquivos que correspondem a todos os seguintes**:
 
@@ -418,7 +432,7 @@ Agora que a verificação de rótulos está habilitada, você criará uma polít
 
       - Selecione a caixa de seleção para **Aplicar rótulo de confidencialidade**
 
-      - Na lista suspensa, selecione **Geral - Qualquer pessoa (sem restrições)**
+      - No menu suspenso, selecione **Projeto – Altamente confidencial - Falcon**
 
    - Repita o mesmo processo para o **Microsoft SharePoint Online**
 
@@ -428,4 +442,4 @@ Agora que a verificação de rótulos está habilitada, você criará uma polít
 
 1. Selecione **Criar** para concluir a criação da política de arquivo.
 
-Você criou uma política de arquivo que aplica um rótulo de confidencialidade geral a arquivos compartilhados externamente no SharePoint e no OneDrive. Depois que um arquivo correspondente for detectado, o Defender para Aplicativos de Nuvem aplicará o rótulo automaticamente.
+Você criou uma política de arquivo que aplica um rótulo de confidencialidade altamente confidencial a arquivos compartilhados externamente localizados nas pastas do Projeto Mark 8 no SharePoint e no OneDrive. Depois que um arquivo correspondente for detectado, o Defender para Aplicativos de Nuvem aplicará o rótulo automaticamente.

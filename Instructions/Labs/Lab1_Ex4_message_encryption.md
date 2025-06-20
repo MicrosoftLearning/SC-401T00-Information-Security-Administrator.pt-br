@@ -22,7 +22,7 @@ Nesta tarefa, você verificará a funcionalidade correta do Azure RMS do locatá
 
 1. Você ainda deve estar conectado à VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-CL1\admin**.
 
-1. Abra o PowerShell clicando com o botão direito do mouse no botão Iniciar na barra de tarefas e selecionando **Terminal**.
+1. Abra o PowerShell clicando com o botão direito do mouse no botão Iniciar na barra de tarefas e selecionando **Terminal (Administrador)**.
 
 1. Execute o cmdlet **Install Module** para instalar a versão mais recente do módulo do **PowerShell do Exchange Online**:
 
