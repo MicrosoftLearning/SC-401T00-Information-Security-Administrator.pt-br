@@ -28,9 +28,7 @@ Nesta tarefa, você verificará se os rótulos de confidencialidade publicados e
 
 1. Você ainda estará na VM do Cliente 1 (SC-401-CL1) como a conta **SC-401-CL1\admin** e estará conectado ao Microsoft 365 como **Joni Sherman**`JoniS@WWLxZZZZZZ.onmicrosoft.com` (em que ZZZZZZ é a ID de locatário exclusiva fornecida pelo provedor de hospedagem de laboratório). A senha de Joni foi definida em um exercício anterior.
 
-1. No Microsoft Edge, selecione o inicializador de aplicativos no canto superior esquerdo e escolha **Word**.
-
-    ![Captura de tela mostrando onde selecionar o Word no menu do inicializador de aplicativos.](../Media/meatball-menu-word.png)
+1. No Microsoft Edge, navegue até `https://word.office.com` e entre no Microsoft Office como **Joni Sherman**`JoniS@WWLxZZZZZZ.onmicrosoft.com` (em que ZZZZZZ é sua ID de locatário exclusiva fornecida pelo provedor de hospedagem de laboratório). A senha de Joni foi definida em um exercício anterior.
 
 1. Selecione **Documento em branco**.
 
@@ -46,7 +44,7 @@ Nesta tarefa, você verificará se os rótulos de confidencialidade publicados e
 
     > [!Note] Pode levar de 24 a 48 horas para que os rótulos de confidencialidade recém-publicados estejam disponíveis para aplicação. Se os rótulos de confidencialidade recém-criados não estiverem disponíveis, você poderá usar **Confidencial** > **Todos os Funcionários** para este exercício.
 
-1. Altere o rótulo de confidencialidade para **Público** para verificar se a caixa de diálogo de justificativa comercial é exibida.
+1. Altere o rótulo de sensibilidade para **Altamente Confidencial** > **Projeto - Falcon** para verificar se a caixa de diálogo de justificativa comercial é exibida.
 
 1. Selecione **Cancelar** para manter o rótulo de confidencialidade.
 
