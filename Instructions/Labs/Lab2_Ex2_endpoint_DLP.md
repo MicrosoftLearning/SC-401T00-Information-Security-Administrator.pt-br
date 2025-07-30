@@ -31,7 +31,7 @@ Nesta tarefa, você integrará um dispositivo Windows 11 para que ele esteja pro
 
 1. Na caixa de diálogo **Downloads**, passe o cursor sobre o download e selecione o ícone da pasta para **Mostrar na pasta**.
 
-1. Extraia o arquivo zip para a **área de trabalho** do SC-401-CL1. Você deve ver um script chamado **DeviceComplianceLocalOnboardingScript.cmd**.
+1. Extraia o arquivo zip para a **área de trabalho** do SC-401-CL2. Você deve ver um script chamado **DeviceComplianceLocalOnboardingScript.cmd**.
 
 1. Na área de trabalho, clique com o botão direito do mouse no arquivo **DeviceComplianceLocalOnboardingScript.cmd** que você acabou de extrair e selecione **Mostrar mais opções**, depois selecione **Propriedades**.
 
