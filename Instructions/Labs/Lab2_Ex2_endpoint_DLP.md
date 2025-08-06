@@ -73,6 +73,8 @@ Nesta tarefa, você criará uma política DLP que bloqueia a transferência de i
 
 1. No painel de navegação à esquerda, selecione **Políticas** e **+ Criar política**.
 
+1. Na página **Escolher que tipo de dados proteger**, selecione **Dados armazenados em fontes conectadas** e, em seguida, selecione **Avançar**.
+
 1. Na página **Iniciar com um modelo ou criar uma política personalizada**, escolha **Personalizada**, **Política personalizada** e **Avançar**.
 
 1. Na página **Nomear a sua política de DLP**, insira:

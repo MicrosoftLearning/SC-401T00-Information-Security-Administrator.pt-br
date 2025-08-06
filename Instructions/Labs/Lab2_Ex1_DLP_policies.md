@@ -37,6 +37,8 @@ Nesta tarefa, você criará uma política DLP no modo de simulação que tem com
 
 1. Na página **Políticas**, escolha **+ Criar política** para iniciar a configuração para criar uma nova política de prevenção contra perda de dados.
 
+1. Na página **Escolher que tipo de dados proteger**, selecione **Dados armazenados em fontes conectadas** e, em seguida, selecione **Avançar**.
+
 1. Na página **Iniciar com um modelo ou criar uma política personalizada**, escolha **Personalizada** como a categoria e, em seguida, **Política personalizada** em **Regulamentos**.
 
 1. Selecione **Avançar**.
